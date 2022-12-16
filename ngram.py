@@ -52,15 +52,11 @@ def buildChain(fileName):
 
 
 def loadChain(fileName):
-  chain = 0
-  start = 0
-  with open(fileName, 'r') as file:
-    exec('chain = ' + file.readline())
-    exec('start = ' + file.readline())
+  file = open(fileName, 'r', encoding="utf8")
+  chain = eval(file.readline())
+  start = eval(file.readline())
+  file.close()
   return (chain, start)
-
-
-
 def generateLine(chain, start):
   ret = []
   gen = random.random()
