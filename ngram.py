@@ -4,9 +4,9 @@ def buildChain(fileName):
   text = ''
   with open(fileName, 'r') as file:
     for line in file:
-      if line == '':
-        continue
       line = clean(line)
+      if line == '' or len(line) == 0:
+        continue
       end = line[-1]
       if not (end == '.' or end == '?' or end == '!'):
         line += '.'
@@ -57,6 +57,7 @@ def loadChain(fileName):
   start = eval(file.readline())
   file.close()
   return (chain, start)
+  
 def generateLine(chain, start):
   ret = []
   gen = random.random()

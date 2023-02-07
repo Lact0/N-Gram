@@ -14,6 +14,8 @@ with open('AI Quotes/aiQuotes.txt', 'r') as file:
     aiQuotes += [row.replace('\n', '')]
     
 #Functions
+
+#Print and Save a new Bot-Generated Quote
 def printQuote(n = 1):
   quotes = []
   for i in range(n):
@@ -25,6 +27,7 @@ def printQuote(n = 1):
       file.write(quote)
       file.write('\n')
 
+#Print the best Anime Quotes
 def printFunny():
   with open('Quotes/good.txt', 'r') as file:
     for row in file:
@@ -35,6 +38,7 @@ def printFunny():
       print(quotes[x])
       print(' ')
 
+#Print the best AI-generated Quotes
 def printAiFunny():
   with open('AI Quotes/bestAiQuotes.txt', 'r') as file:
     for row in file:
